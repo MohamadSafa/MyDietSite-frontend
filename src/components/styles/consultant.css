@@ -1,3 +1,16 @@
 .consultant {
-    font-weight: bolder;
+  font-weight: bolder;
+}
+
+.consultant-flex {
+  column-gap: 30px;
+  margin: 0 100px;
+}
+
+.consultant-flex img {
+  max-width: 40%;
+}
+
+.consultant-flex p {
+  width: 40%;
 }

@@ -15,9 +15,9 @@ function Herosection({ img }) {
       <div className="Header-Desktop">
         <div>
           <img src={Image} className="size-16 md:h-full w-full" alt="hero image"></img>
-          {/* <Link to="/MissionPage">
-            <button className="Order-now"> Learn more </button>
-          </Link> */}
+          <Link to="/MissionPage" className="Learn-more">
+            <button> Learn more </button>
+          </Link>
         </div>
         <div>
           

@@ -9,7 +9,7 @@ const Consultant = () => {
         <div id='consultant' className="text-center text-5xl pt-20 pb-10 relative" style={{ color: "black" }}> YOUR HEALTHY CONSULTANT
         <p className="text-center text-2xl pt-5 pb-20">Mohamad, 27 years, Your Diet & Gym Consultant</p>
             <div className="block justify-center items-center rounded-3xl">
-                <div className="block relative">
+                <div className="flex relative consultant-flex">
                     <img className="block justify-center items-center rounded-3xl" src={coach} alt="mohamad-safa" />
                     <div className="text-center text-xl flex">
                     <p className="text-center text-xl flex-end"/>

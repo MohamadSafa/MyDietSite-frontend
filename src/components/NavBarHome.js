@@ -9,7 +9,7 @@ const NavBarHome = () => {
   useEffect(()=>{},[handlelogout])
   return (
 
-    <div className="nav-bar">
+    <div className="nav-bar" id="top">
       <div className="Logo">
         <Link to="/">
           <img src={Logo} alt="logo icon"></img>
@@ -18,10 +18,10 @@ const NavBarHome = () => {
       <div className="Links">
         <ul>
           <li>
-            <a href="#About" className="">About</a>
+            <a href="/#About" className="">About</a>
           </li>
           <li>
-            <a href="#Mission" className="">Mission</a>
+            <a href="/MissionPage" className="">Mission</a>
           </li>
           <li>
             <a href="#Plans" className="">Plans</a>

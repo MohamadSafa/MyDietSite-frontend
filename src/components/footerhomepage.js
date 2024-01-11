@@ -45,7 +45,7 @@ function Footerhomepage() {
 
     return (
     <div>
-        <img src={footer} className="size-16 h-96 w-full pt-10" alt="footer image"></img>
+        <img src={footer} className="size-16 h-96 w-full pt-10 object-cover" alt="footer image"></img>
         <div id="Contact" className="footer-container-homepage">
             </div>
             <div className="footer-social full-width">
@@ -55,7 +55,7 @@ function Footerhomepage() {
                 </div>
                 <div className='up'>
                 <Link to="">
-                        <img src={up} onClick="scrolltotop" alt="" />
+                        <img src={up} onClick={window.scroll(0,0)}  alt="" />
                     </Link>
                 </div>
                 <div>
