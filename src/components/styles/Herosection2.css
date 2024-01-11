@@ -1,0 +1,45 @@
+.Header-Desktop2 {
+  background-color: #ffb551;
+  padding: -100px;
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+.nav-bar2 {
+  background-color: #ffb551;
+}
+
+.login-btn2 {
+  background-color: #2ec4b6;
+}
+
+.Hero-image2 {
+  margin-top: -330px;
+}
+
+.slang-image2 {
+  color: white;
+  width: 40%;
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+.Order-now2 {
+  background-color: #2ec4b6;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-bottom: 120px;
+  margin-left: 120px;
+}
+
+.Hero-image3 {
+  margin-top: -225px;
+}
+
+.slang-image3 {
+  width: 40%;
+  padding-left: 5%;
+  padding-top: 2%;
+}

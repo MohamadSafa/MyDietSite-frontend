@@ -1,0 +1,79 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px 20px 60px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.nav-bar {
+    background-color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-icon {
+    width: 50%;
+    margin-top: -13%;
+}
+
+.Logo {
+    width: 30%;
+    margin: 10px 7px;
+}
+
+.Links {
+    width: 60%;
+    height: 100%;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+.Links ul {
+    display: flex;
+    font-size: xx-large;
+    justify-content: space-between;
+    color: black;
+    padding-left: 5%;
+    padding-bottom: 3%;
+}
+
+.Links li:hover {
+    color: #5FD3AA
+}
+
+.Login {
+    display: flex;
+    justify-content: flex-end;
+    width: 10%;
+    padding-top: 2%;
+}
+
+.search-icon {
+    width: 40%;
+}
+
+.login-btn {
+    background-color: #FFB551;
+    color: white;
+    border-radius: 15px;
+    padding: 7px 20px;
+    margin: 1px 8px 15px;
+    margin-right: 40px;
+}
+
+.Links4 ul {
+    display: flex;
+    font-size: xx-large;
+    justify-content: space-between;
+    color: white;
+    padding-right: 60%;
+    gap: 30%;
+}
+
+.Logo4 {
+    width: 20%;
+    margin: 20px 150px;
+    margin-left: -40%;
+}
