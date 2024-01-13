@@ -62,10 +62,10 @@ function Footerhomepage() {
                     <h2 className="phone-number">Follow us</h2>
                 </div>
                 <div className="footer-social-icons">
-                    <Link to="">
+                    <Link to="https://www.facebook.com/DietSite" target='_blank'>
                         <img src={facebook} alt="" />
                     </Link>
-                    <Link to="">
+                    <Link to="https://www.instagram.com/safamux/" target='_blank'>
                         <img src={instagram} alt="" />
                     </Link>
                     <Link to="">

@@ -14,3 +14,16 @@
 .consultant-flex p {
   width: 40%;
 }
+
+.consultant-flex2 {
+  column-gap: 30px;
+  margin: 0 50px;
+}
+
+.consultant-flex2 img {
+  max-width: 60%;
+}
+
+/* .consultant-flex2 p {
+  font-size: x-large;
+} */

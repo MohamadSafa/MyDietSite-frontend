@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { getUserID } from './Util/GetUserData';
 import "./styles/about.css";
 
 const Plan = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    height: '',
-    currentWeight: '',
-    desiredWeight: '',
-    email: '',
-  });
+const userId = getUserID();
+const [height, setHeight] = useState("");
+const [weight, setWeight] = useState("");
+const [desiredWeight, setDesiredWeight] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your form submission logic here
-    console.log('Form submitted:', formData);
+    axios.post('http://localhost:5000/requests/add', {userId, height, weight, desiredWeight})
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((error)=>{
+      console.error(error)
+    })
   };
 
   return (
@@ -58,8 +59,7 @@ const Plan = () => {
             <input
               type="number"
               name="height"
-              value={formData.height}
-              onChange={handleChange}
+              onChange={(e)=>setHeight(e.target.value)}
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
               required
             />
@@ -70,8 +70,7 @@ const Plan = () => {
             <input
               type="number"
               name="currentWeight"
-              value={formData.currentWeight}
-              onChange={handleChange}
+              onChange={(e)=>setWeight(e.target.value)}
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
               required
             />
@@ -82,8 +81,7 @@ const Plan = () => {
             <input
               type="number"
               name="desiredWeight"
-              value={formData.desiredWeight}
-              onChange={handleChange}
+              onChange={(e)=>setDesiredWeight(e.target.value)}
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
               required
             />

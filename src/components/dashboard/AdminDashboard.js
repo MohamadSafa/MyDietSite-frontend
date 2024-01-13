@@ -1,7 +1,6 @@
 import UserTable from "../dashboard/UserTable";
-import OrderTable from "./OrderTable";
-import ProductTable from "./ProductTable";
-// import SideBar from "../Sidebar";
+import RequestPlanTable from "./RequestPlanTable";
+import PlansTable from "./PlansTable";
 import "../styles/NavBar.css";
 import Logo from "./logo2.png";
 import { Link } from "react-router-dom";
@@ -23,10 +22,10 @@ const AdminDashboard = () => {
               <Link to="" onClick={()=>setSection('Users')} className="">Users</Link>
             </li>
             <li>
-              <Link to="" onClick={()=>setSection('Products')} className="">Products</Link>
+              <Link to="" onClick={()=>setSection('Plans')} className="">Plans</Link>
             </li>
             <li>
-              <Link to="" onClick={()=>setSection('Orders')} className="">Orders</Link>
+              <Link to="" onClick={()=>setSection('Requests')} className="">Requests</Link>
             </li>
             <li>
               <Link to="/login" onClick={handlelogout} className="">Logout</Link>
@@ -36,8 +35,8 @@ const AdminDashboard = () => {
       </div>
 
       {(section === 'Users' || section === '') && <UserTable />}
-      {section === 'Products' && <ProductTable />}
-      {section === 'Orders' && <OrderTable />}
+      {section === 'Plans' && <PlansTable />}
+      {section === 'Requests' && <RequestPlanTable />}
     </>
   );
 };

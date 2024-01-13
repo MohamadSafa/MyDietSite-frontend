@@ -9,19 +9,12 @@ const AboutUs = () => {
             {/* <h2 className="about-container" style={{ color: "black" }}> GET STARTED!</h2> */}
 
             <div className="flex justify-between mb-5">
-                <div className="flex center items-center text-4xl px-20 " style={{ color: "black" }}>
+                <div className="flex center items-center mx-10 text-4xl px-10 " style={{ color: "black" }}>
                     GET STARTED !
                 </div>
-                <div className="flex center items-center text-4xl px-20">
-                <Link to="/MissionPage">
-                    <button className="text-white text-xl px-8 py-3 border-2 border-black rounded-none" style={{ color: "black" }}>
-                        Learn more
-                    </button>
-                    </Link>
-                </div>
-                <div className="flex center items-center text-4xl px-20">
+                <div className="flex center items-center text-4xl">
                 <Link to="/login">
-                    <button className="text-white text-xl px-8 py-3 border-2 border-black rounded-none" style={{ color: "black" }}>
+                    <button className="text-white text-xl mx-40 px-10 py-3 border-2 border-black hover:bg-[#5FD3AA] rounded-none" style={{ color: "black" }}>
                         LOGIN
                     </button>
                     </Link>

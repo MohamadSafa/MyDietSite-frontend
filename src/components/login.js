@@ -21,7 +21,6 @@ function LoginForm() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
   const [phoneNumber, setphoneNumber] = useState("");
 
   const handleEmail = (e) => {
@@ -59,7 +58,7 @@ function LoginForm() {
       fullName: fullName,
       email: email,
       password: password,
-      role: role,
+      role: "customer",
       phoneNumber: phoneNumber,
     };
     try {
@@ -183,15 +182,7 @@ function LoginForm() {
                             required
                           />
                         </div>
-                        <div className="relative mb-4">
-                          <input
-                            type="text"
-                            className="peer block min-h-[auto] w-full rounded border border-gray-300 bg-white px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear shadow-text-black text-black"
-                            placeholder="Role"
-                            onChange={(e) => setRole(e.target.value)}
-                            required
-                          />
-                        </div>
+                    
                         <div className="relative mb-4">
                           <input
                             type="text"

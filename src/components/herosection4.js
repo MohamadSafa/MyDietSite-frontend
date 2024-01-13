@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Image from "../images/hero1.png";
+import Image4 from "../images/hero4.png";
 import "./styles/Herosection.css";
 
-function Herosection({ img }) {
+function Herosection4({ img }) {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
 
   const toggleBurgerMenu = () => {
@@ -14,10 +14,10 @@ function Herosection({ img }) {
     <div>
       <div className="Header-Desktop">
         <div>
-          <img src={Image} className="size-16 md:h-full w-full" alt="hero image"></img>
-          <Link to="/MissionPage" >
-            <button className="Learn-more"> Learn more </button>
-          </Link>
+          <img src={Image4} className="size-16 md:h-full w-full" alt="hero image"></img>
+          {/* <Link to="/MissionPage">
+            <button className="Order-now"> Learn more </button>
+          </Link> */}
         </div>
         <div>
           
@@ -76,4 +76,4 @@ function Herosection({ img }) {
     </div>
   );
 }
-export default Herosection;
+export default Herosection4;

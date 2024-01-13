@@ -1,19 +1,18 @@
 import React from "react";
 import NavBar from "./NavBarHome";
-import Herosection3 from "./Herosection3";
+import Herosection4 from "./herosection4";
 import Footerhomepage from "./footerhomepage";
-import Plan from "./plan";
+import Stories from "./stories";
 
-
-const PlansPage = () => {
+const StoriesPage = () => {
     return (
       <div>
         <NavBar />
-        <Herosection3 />
-        <Plan/>
+        <Herosection4 />
+        <Stories/>
         <Footerhomepage />
       </div>
     );
   };
   
-  export default PlansPage;
+  export default StoriesPage;

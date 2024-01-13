@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage";
 import MissionPage from "./components/MissionPage";
 import LoginForm from "./components/login";
 import PlansPage from "./components/PlansPage";
+import StoriesPage from './components/StoriesPage';
 import AdminDashboard from "./components/dashboard/AdminDashboard"
 import { getUserRole } from "./components/Util/GetUserData";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/MissionPage" element={<MissionPage />} />
+        <Route path="/StoriesPage" element={<StoriesPage />} />
         <Route path="/PlansPage" element={<PlansPage />} />
         {/* <Route path="/PlansPage" element={role === 'user' && <PlansPage />} /> */}
         <Route path="/admin/*" element={(role === 'admin') ? <AdminDashboard />: <HomePage/>} />

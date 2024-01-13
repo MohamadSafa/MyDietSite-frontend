@@ -18,7 +18,7 @@
 }
 
 .card-main {
-  background: #2ec4b6;
+  background: #CEF3E7;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -131,12 +131,13 @@ h2 {
 }
 
 .button-primary {
-  background-color: #ffb551;
+  background-color: #5FD3AA;
   color: white;
 }
 
 .button-primary:hover {
-  background-color: #2ec4b6;
+  color: black;
+  background-color: white;
 }
 
 .button-primary:disabled {
@@ -164,7 +165,7 @@ h2 {
 
 .table th {
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #5FD3AA;
   color: black;
   user-select: none;
 }
@@ -177,19 +178,44 @@ h2 {
   background-color: #ddd;
 }
 
+.table tr{
+  background-color: white;
+}
+
 .Links4 li:hover {
-  color: #2ec4b6;
+  color: white;
 }
 
 .dashboard-title {
     font-size: xx-large;
-    color: white;
+    color: black;
     padding-bottom: 3%;
 }
 
-.nav-bar4 {
-    background-color: #ffb551;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%,-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.box-close{
+  position: absolute;
+  font-size: 40px;
+  color: black;
+  right: 5%;
+  top: 1%;
+}
+.box-close:hover{
+  cursor: pointer;
 }
