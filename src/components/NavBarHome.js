@@ -12,7 +12,8 @@ const NavBarHome = () => {
   const handlelogout = () => {sessionStorage.removeItem('authToken'); navigate("/login")};
   useEffect(()=>{},[handlelogout])
   const goToRequests = ()=>{
-    if(role === "customer"){navigate("/myrequests/*")}
+    if(role === "admin"){navigate("/admin/*")
+  } else if (role === "customer"){navigate("/myrequests/*")}
 window.location.reload();
 }
   return (

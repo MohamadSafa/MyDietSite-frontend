@@ -15,10 +15,7 @@ function Footerhomepage() {
     const role = getUserRole();
     const form = useRef();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const goToDashboard = ()=>{
-        if(role === "admin"){navigate("/admin/*")}
-    window.location.reload();
-}
+
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -73,7 +70,7 @@ function Footerhomepage() {
                 </div>
             </div>
             <div className="footer-copyright">
-                <p id="copyright" onClick={goToDashboard}>© 2024 All rights reserved</p>
+                <p id="copyright">© 2024 All rights reserved</p>
             </div>
         </div>
     );
