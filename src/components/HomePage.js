@@ -5,7 +5,7 @@ import AboutUs from "./about";
 import Consultant from "./consultant";
 import Nutrition from "./nutrition";
 import Strength from "./strength";
-import Footerhomepage from "./footerhomepage";
+import Footerhomepage from "./footer";
 
 const HomePage = () => {
   return (

@@ -8,6 +8,7 @@ import PlansPage from "./components/PlansPage";
 import StoriesPage from './components/StoriesPage';
 import AdminDashboard from "./components/dashboard/AdminDashboard"
 import { getUserRole } from "./components/Util/GetUserData";
+import RequestDashboard from "./components/dashboard/myrequests";
 
 function App() {
   const token = localStorage.getItem('authToken')
@@ -22,6 +23,7 @@ function App() {
         <Route path="/StoriesPage" element={<StoriesPage />} />
         <Route path="/PlansPage" element={<PlansPage />} />
         {/* <Route path="/PlansPage" element={role === 'user' && <PlansPage />} /> */}
+        <Route path="/myrequests/*" element={(role === 'customer') ? <RequestDashboard />: <HomePage/>} />
         <Route path="/admin/*" element={(role === 'admin') ? <AdminDashboard />: <HomePage/>} />
       </Routes>
     </div >

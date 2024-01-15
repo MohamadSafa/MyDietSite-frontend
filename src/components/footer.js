@@ -16,8 +16,7 @@ function Footerhomepage() {
     const form = useRef();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const goToDashboard = ()=>{
-        if(role === "admin"){navigate("/admin/*")
-    } else if (role === "seller"){navigate("/seller/*")}
+        if(role === "admin"){navigate("/admin/*")}
     window.location.reload();
 }
 
@@ -63,13 +62,13 @@ function Footerhomepage() {
                 </div>
                 <div className="footer-social-icons">
                     <Link to="https://www.facebook.com/DietSite" target='_blank'>
-                        <img src={facebook} alt="" />
+                        <img src={facebook} alt="facebook-MyDietSite" />
                     </Link>
                     <Link to="https://www.instagram.com/safamux/" target='_blank'>
-                        <img src={instagram} alt="" />
+                        <img src={instagram} alt="instagram Safa" />
                     </Link>
-                    <Link to="">
-                        <img src={linkedin} alt="" />
+                    <Link to="https://www.linkedin.com/in/mohamad-safa/" target='_blank'>
+                        <img src={linkedin} alt="linkedin mohamad-safa" />
                     </Link>
                 </div>
             </div>

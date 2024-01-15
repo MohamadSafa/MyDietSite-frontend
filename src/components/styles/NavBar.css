@@ -13,14 +13,9 @@
     align-items: center;
 }
 
-.cart-icon {
-    width: 50%;
-    margin-top: -13%;
-}
-
 .Logo {
-    width: 30%;
-    margin: 10px 7px;
+    width: 25%;
+    margin: 10px 0%;
 }
 
 .Links {
@@ -35,11 +30,14 @@
     font-size: xx-large;
     justify-content: space-between;
     color: black;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
+    gap:3.8%;
+    
 }
 
 .Links li:hover {
     color: #5FD3AA
+    
 }
 
 .Login {
@@ -47,19 +45,6 @@
     justify-content: flex-end;
     width: 10%;
     padding-top: 2%;
-}
-
-.search-icon {
-    width: 40%;
-}
-
-.login-btn {
-    background-color: #FFB551;
-    color: white;
-    border-radius: 15px;
-    padding: 7px 20px;
-    margin: 1px 8px 15px;
-    margin-right: 40px;
 }
 
 .Links4 ul {
@@ -71,6 +56,31 @@
     gap: 30%;
 }
 
+.Links5 ul {
+    display: flex;
+    font-size: xx-large;
+    justify-content: space-between;
+    border: 30px;
+    color: black;
+    padding-right: 60%;
+    gap: 30%;
+}
+
+.Links5 li {
+    background-color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+    border: black;
+    border-style:solid;
+    gap: 5%;
+}
+
+.Links5 li:hover {
+    transition: 0.2s;
+   color: black;
+   background-color: #5FD3AA;
+}
+
 .Logo4 {
     width: 20%;
     margin: 30px 140px;
@@ -79,6 +89,13 @@
 
 .nav-bar4 {
     background-color: #5FD3AA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar5 {
+    background-color: #CEF3E7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,4 +115,9 @@
 .Log-out:hover {
     color: white;
     background-color: #5FD3AA;
+}
+
+.my-request {
+    max-width: 140%;
+    margin-left: 34px;
 }

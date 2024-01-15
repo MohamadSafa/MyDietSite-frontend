@@ -1,13 +1,20 @@
 import "./styles/NavBar.css";
 import Logo from "../images/Logo.png";
+import Requests from "../images/myrequests.png"
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { getUserRole } from "./Util/GetUserData";
 
 const NavBarHome = () => {
   const navigate = useNavigate();
+  const role = getUserRole();
   const token = sessionStorage.getItem('authToken')
   const handlelogout = () => {sessionStorage.removeItem('authToken'); navigate("/login")};
   useEffect(()=>{},[handlelogout])
+  const goToRequests = ()=>{
+    if(role === "customer"){navigate("/myrequests/*")}
+window.location.reload();
+}
   return (
 
     <div className="nav-bar" id="top">
@@ -37,6 +44,11 @@ const NavBarHome = () => {
             {token && (
               <button className="Log-out" onClick={handlelogout}>Logout</button>
             )}
+          </li>
+          <li>
+          <Link to="/">
+          <img className="my-request" onClick={goToRequests} src={Requests} alt="requests icon"></img>
+        </Link>
           </li>
         </ul>
       </div>
