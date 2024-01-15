@@ -38,6 +38,7 @@ const AdminDashboard = () => {
       {section === 'Plans' && <PlansTable />}
       {section === 'Requests' && <RequestPlanTable />}
     </>
+    
   );
 };
 

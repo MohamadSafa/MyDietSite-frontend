@@ -105,4 +105,20 @@
     background-color: #5FD3AA ;
     color: white;
 }
-   
+
+.submit-button2 {
+    font-size: x-large;
+    color: black;
+    background-color: white;
+    padding-right: 2%;
+    padding-left: 2%;
+    position: absolute;
+    border: black;
+    border-style:solid;
+}
+
+.submit-button2:hover {
+    transition: 0.2s;
+    background-color: #5FD3AA ;
+    color: white;
+}

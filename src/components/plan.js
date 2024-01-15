@@ -29,10 +29,10 @@ const [desiredWeight, setDesiredWeight] = useState("");
         <div className="block rounded-3xl">
           <p className="text-center text-2xl pt-5 pb-10">Instant plans in the same day</p>
           <div className="block relative">
-            <div className="text-2xl px-10 text-left pb-10">
+            <div className="text-2xl px-20 text-left pb-10">
               This page includes a form to fill for: Height, Current Weight, Desired Weight, Gender & Email.
             </div>
-            <div className="text-2xl px-10  text-left">
+            <div className="text-2xl px-20 text-left">
               In this section afterwards, your consultant will calculate the timing and the effort needed (meal plans) to achieve the desired weight then have an e-mail reply within 24 hours.
             </div>
           </div>
@@ -100,13 +100,13 @@ const [desiredWeight, setDesiredWeight] = useState("");
           </div> */}
 
           <div className="col-span-2">
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+            <button type="submit" className="submit-button2">SUBMIT</button>
           </div>
         </form>
       </div>
       <div className="text-center text-5xl flex items-center justify-center gap-8">
             <p className="" style={{ color: "black" }}> Get your </p>
-            <p className="mt-10" style={{ color: "#5FD3AA" }}> ideal body </p>
+            <p className="mt-36" style={{ color: "#5FD3AA" }}> ideal body </p>
           </div>
     </div>
   );

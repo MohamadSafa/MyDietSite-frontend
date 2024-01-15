@@ -9,8 +9,6 @@ import { useState } from "react";
 const RequestDashboard = () => {
     const [section, setSection] = useState('')
     const handlelogout = () => {sessionStorage.removeItem('authToken')}
-    const goToRequests = ()=>{
-    }
   return (
     <>
       <div className="nav-bar5">
@@ -28,8 +26,11 @@ const RequestDashboard = () => {
           </ul>
         </div>
       </div>
-
       {(section === 'Requests' || section === '') && <RequestPlanTable2 />}
+      <div className="text-center text-5xl flex items-center justify-center gap-8">
+                <p className="" style={{ color: "black" }}> Get your </p>
+                <p className="mt-10" style={{ color: "#5FD3AA" }}> ideal body </p>
+            </div>
     </>
   );
 };

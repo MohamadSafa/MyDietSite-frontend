@@ -201,7 +201,7 @@ function LoginForm() {
                         data-te-ripple-init
                         data-te-ripple-color="light"
                         style={{
-                          background: "#5FD3AA",
+                          background: "#FFFFFF",
                         }}
                         onClick={
                           isRegistering
