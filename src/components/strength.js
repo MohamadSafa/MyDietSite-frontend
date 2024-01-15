@@ -7,9 +7,9 @@ import form from '../images/strength3.jpeg'
 const Strength = () => {
     return (
         <div>
-            <h2 className="text-center text-5xl pt-20 pb-20 relative" style={{ color: "black" }}>STRENGTH</h2>
+            <h2 className="bg-[#CEF3E7] text-center text-5xl pt-20 pb-20 relative" style={{ color: "black" }}>STRENGTH</h2>
 
-            <div id="strength" className="flex pb-20 gap-8 m-0 justify-center">
+            <div id="strength" className="flex pb-20 gap-8 m-10 justify-center">
                 <div className="">
                     <img className="block justify-center items-center rounded-3xl" src={kettlebell} alt="" />
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>

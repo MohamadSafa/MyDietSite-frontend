@@ -35,7 +35,6 @@
     font-size: xx-large;
     justify-content: space-between;
     color: black;
-    padding-left: 5%;
     padding-bottom: 3%;
 }
 
@@ -83,4 +82,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Log-out {
+    font-size: xx-large;
+    color: red;
+    background-color: white;
+    border: black;
+    border-style:solid;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 4%;
+}
+
+.Log-out:hover {
+    color: white;
+    background-color: #5FD3AA;
 }

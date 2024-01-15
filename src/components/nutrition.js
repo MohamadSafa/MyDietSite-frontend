@@ -9,7 +9,7 @@ const Nutrition = () => {
         <div>
             <h2 className="bg-[#CEF3E7] text-center text-5xl pt-20 pb-20 relative" style={{ color: "black" }}>NUTRITION</h2>
 
-            <div id="nutrition" className="bg-[#CEF3E7] flex pb-20 gap-8 m-0 justify-center">
+            <div id="nutrition" className="flex pb-20 gap-8 m-10 justify-center">
                 <div className="">
                     <img className="block justify-center items-center rounded-3xl" src={smoothie} alt="" />
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>

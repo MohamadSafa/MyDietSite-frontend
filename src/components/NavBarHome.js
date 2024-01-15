@@ -35,7 +35,7 @@ const NavBarHome = () => {
           </li>
           <li>
             {token && (
-              <button className="Log-out" onClick={handlelogout}>Log out</button>
+              <button className="Log-out" onClick={handlelogout}>Logout</button>
             )}
           </li>
         </ul>
