@@ -2,6 +2,7 @@ import React from 'react';
 import smoothie from '../images/nutrition1.jpeg'
 import oatmeal from '../images/nutrition2.jpeg'
 import fruits from '../images/nutrition3.jpeg'
+import "./styles/nutrition.css"
 
 
 const Nutrition = () => {

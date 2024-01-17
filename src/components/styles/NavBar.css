@@ -122,11 +122,20 @@
     margin-left: 34px;
 }
 
+.Hero-Mobile {
+    display: none;
+} 
+
+
+
 /* Responsive */
 
 @media (max-width: 844px) {
+    .Hero-Mobile{
+        display : block;
+    }
     .nav-bar {
-        padding: 10px 15px 10px 10px;
+        display: none;
     }
 
     .Logo {

@@ -2,6 +2,7 @@ import React from 'react';
 import kettlebell from '../images/strength1.jpeg'
 import gear from '../images/strength2.jpeg'
 import form from '../images/strength3.jpeg'
+import "./styles/nutrition.css"
 
 
 const Strength = () => {

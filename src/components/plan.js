@@ -100,7 +100,7 @@ const [desiredWeight, setDesiredWeight] = useState("");
           </div> */}
 
           <div className="col-span-2">
-            <button type="submit" className="submit-button2">SUBMIT</button>
+            <button type="submit" className="submit-button2">S U B M I T</button>
           </div>
         </form>
       </div>

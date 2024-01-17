@@ -1,8 +1,9 @@
 import "./styles/NavBar.css";
 import Logo from "../images/Logo.png";
+import Burger from "../images/burger-menu.png"
 import Requests from "../images/myrequests.png"
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUserRole } from "./Util/GetUserData";
 
 const NavBarHome = () => {
@@ -15,9 +16,14 @@ const NavBarHome = () => {
     if(role === "admin"){navigate("/admin/*")
   } else if (role === "customer"){navigate("/myrequests/*")}
 window.location.reload();
-}
-  return (
 
+}
+const [isBurgerActive, setIsBurgerActive] = useState(false);
+const toggleBurgerMenu = () => {
+  setIsBurgerActive(!isBurgerActive);
+};
+  return (
+<div>
     <div className="nav-bar" id="top">
       <div className="Logo">
         <Link to="/">
@@ -52,6 +58,43 @@ window.location.reload();
         </Link>
           </li>
         </ul>
+      </div>
+      </div>
+       <div className="Hero-Mobile">
+        <div className="Mobile">
+          <div className="Mobile-Navbar">
+            <button className="Mobile-Burger" onClick={toggleBurgerMenu}>
+            </button>
+
+            <div class="burger-icon">
+        <Link to="/">
+          <img src={Burger} alt="burger icon"></img>
+        </Link>
+            </div>
+            <div className={`Mobile-Nav ${isBurgerActive ? "active" : ""}`}>
+              <a className="Mobile-Nav-Title" href="/#About">
+                About
+              </a>
+              <a className="Mobile-Nav-Title" href="/MissionPage">
+                Mission
+              </a>
+              <a className="Mobile-Nav-Title" href="/PlansPage">
+                Plans
+              </a>
+              <a className="Mobile-Nav-Title" href="/StoriesPage">
+                Stories
+              </a>
+              <a className="Mobile-Nav-Title" href="#Contact">
+                Contact
+              </a>
+            </div>
+            <div className="Mobile-Logo">
+            <Link to="/">
+          <img src={Logo} alt="logo icon"></img>
+            </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

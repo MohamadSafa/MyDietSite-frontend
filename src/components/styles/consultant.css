@@ -7,9 +7,9 @@
   margin: 0 100px;
 }
 
-.consultant-flex img {
+/* .consultant-flex img {
   max-width: 40%;
-}
+} */
 
 .consultant-flex p {
   width: 40%;
@@ -22,6 +22,16 @@
 
 .consultant-flex2 img {
   max-width: 60%;
+}
+
+@media (max-width: 600px){
+  .consultant-flex {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+
+  
 }
 
 /* .consultant-flex2 p {

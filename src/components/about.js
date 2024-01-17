@@ -8,7 +8,7 @@ const AboutUs = () => {
 
             {/* <h2 className="about-container" style={{ color: "black" }}> GET STARTED!</h2> */}
 
-            <div className="flex justify-between mb-5">
+            <div className="flex justify-between mb-5 responsive-login">
                 <div className="flex center items-center mx-10 text-4xl px-10 " style={{ color: "black" }}>
                     GET STARTED !
                 </div>
