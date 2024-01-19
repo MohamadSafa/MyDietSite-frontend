@@ -3,12 +3,13 @@ import "../styles/NavBar.css";
 import Logo from "./Logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import {getUserID} from "../Util/GetUserData"
 
 
 const RequestDashboard = () => {
     const [section, setSection] = useState('')
     const handlelogout = () => {sessionStorage.removeItem('authToken')}
+    const userId = getUserID();
   return (
     <>
       <div className="nav-bar5">
@@ -27,10 +28,7 @@ const RequestDashboard = () => {
         </div>
       </div>
       {(section === 'Requests' || section === '') && <RequestPlanTable2 />}
-      <div className="text-center text-5xl flex items-center justify-center gap-8">
-                <p className="" style={{ color: "black" }}> Get your </p>
-                <p className="mt-10" style={{ color: "#5FD3AA" }}> ideal body </p>
-            </div>
+      
     </>
   );
 };

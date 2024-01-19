@@ -102,3 +102,16 @@
     margin-bottom: -5%;
     padding-right: 5%;
 }
+
+
+@media (max-width: 600px){
+    .contact {
+      flex-direction: column;
+      
+    }
+
+    .object-cover {
+        object-fit:contain;
+    }
+
+}

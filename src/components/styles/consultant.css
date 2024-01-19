@@ -30,6 +30,16 @@
     row-gap: 15px;
   }
 
+  #consultant2 {
+    flex-direction: column;
+  
+}
+
+.consultant-flex2 img {
+  max-width: 100%;
+}
+
+
 
   
 }

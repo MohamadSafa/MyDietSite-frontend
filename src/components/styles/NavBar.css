@@ -146,6 +146,10 @@
     .Links5 ul {
         gap: 15%;
     }
+
+    .learn-more {
+        left:5%;
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -179,5 +183,9 @@
     .Links ul {
         font-size: x-large;
         gap: 2%;
+    }
+
+    .learn-more {
+        left: 25%;
     }
 }

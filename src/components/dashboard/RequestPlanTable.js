@@ -10,13 +10,30 @@ const RequestPlanTable = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [inputs, setInputs] = useState([1,  2 ]);
+  // const [inputs, setInputs] = useState([1,  2 ]);
+
   const handleButtonClick = () => {
-    setInputs([...inputs, inputs.length + 1 , inputs.length + 2 ]);
+    // setInputs([...inputs, inputs.length + 1 , inputs.length + 2 ]);
   };
+
   const [planName, setPlanName] = useState("");
   const [planDescription, setPlanDescription] = useState("");
+  const [email, setEmail] = useState("");
+
+  const [mealName1, setMealName1] = useState("");
+  const [mealDescription1, setMealDescription1] = useState("");
+  const [mealName2, setMealName2] = useState("");
+  const [mealDescription2, setMealDescription2] = useState("");
+  const [mealName3, setMealName3] = useState("");
+  const [mealDescription3, setMealDescription3] = useState("");
+  const [mealName4, setMealName4] = useState("");
+  const [mealDescription4, setMealDescription4] = useState("");
+  const [mealName5, setMealName5] = useState("");
+  const [mealDescription5, setMealDescription5] = useState("");
   const [meals, setMeals] = useState([]);
+
+  console.log(meals);
+
   // const [selectedRequest, setSelectedRequest] = useState(null);
   // const [userId, setUserId] = useState("");
   // const [plans, setPlans] = useState(0);
@@ -28,7 +45,6 @@ const RequestPlanTable = () => {
   // const [showUpdateModal, setShowUpdateModal] = useState(false);
   // const [showAddModal, setShowAddModal] = useState(false);
 
-
   const fetchRequests = async () => {
     await axios
       .get("http://localhost:5000/requests/getAll")
@@ -38,17 +54,22 @@ const RequestPlanTable = () => {
         getFullNames(response.data.data);
       })
       .catch((error) => {
-        console.error(error)
+        console.error(error);
       });
   };
 
   useEffect(() => {
     fetchRequests();
   }, []);
+
   const getFullNames = async (requests) => {
     try {
       const allNames = requests.map(async (request) => {
-        const response = await axios.get(`http://localhost:5000/users/getUserId/${request.userId}`);
+        const response = await axios.get(
+          `http://localhost:5000/users/getUserId/${request.userId}`
+        );
+        console.log(response.data)
+        setEmail(response.data.data.email)
         return response.data.data.fullName;
       });
 
@@ -59,87 +80,57 @@ const RequestPlanTable = () => {
     }
   };
 
-const addPlan = (e)=>{
-  e.preventDefault()
-}
+  const addPlan = async (id) => {
+    setMeals([
+      {
+        mealName: mealName1,
+        mealDescription: mealDescription1,
+      },
+      {
+        mealName: mealName2,
+        mealDescription: mealDescription2,
+      },
+      {
+        mealName: mealName3,
+        mealDescription: mealDescription3,
+      },
+      {
+        mealName: mealName4,
+        mealDescription: mealDescription4,
+      },
+      {
+        mealName: mealName5,
+        mealDescription: mealDescription5,
+      },
+    ]);
 
-
-  // const fetchPlans = async () => {
-  //   axios
-  //     .get("http://localhost:5000/plans/getAll")
-  //     .then((response) => {
-  //       console.log(response);
-  //       setProducts(response.data.data);
-  //     })
-  //     .catch((error) => {
-  //       setError(error);
-  //     });
-  // };
-
-  // const handleAddRequest = async () => {
-  //   if (!validateInput()) return;
-
-  //   const token = sessionStorage.getItem("authToken");
-  //   const headers = { Authorization: `Bearer ${token}` };
-
-  //   try {
-  //     await axios.post(
-  //       "http://localhost:5000/requests/add",
-  //       { height, weight , desiredWeight, planStatus },
-  //       { headers }
-  //     );
-
-  //     setShowAddModal(false);
-  //     fetchRequests();
-  //   } catch (error) {
-  //     setError(error);
-  //   }
-  // };
-
-  // const handelUpdateRequestClickButton = (order) => {
-  //   setShowUpdateModal(true);
-  //   setSelectedReuqest(request);
-  //   setHeight(request.height);
-  //   setWeight(request.weight);
-  //   setDesiredWeight(request.desiredWeight);
-  //   setPlanStatus(request.planStatus);
-  // };
-
-  // const handleUpdateRequest = async () => {
-  //   if (!validateInput) return;
-  //   const token = sessionStorage.getItem("authToken");
-  //   const headers = { Authorization: `Bearer ${token}` };
-
-  //   try {
-  //     await axios.put(
-  //       `http://localhost:5000/requests/update/${selectedRequest.ID}`,
-  //       { height, weight, desiredWeight, planStatus },
-  //       { headers }
-  //     );
-
-  //     setShowUpdateModal(false);
-  //     fetchRequests();
-  //   } catch (error) {
-  //     setError(error);
-  //   }
-  // };
-  // const handleDeleteRequest = async (requestID) => {
-  //   const token = sessionStorage.getItem("authToken");
-  //   const headers = { Authorization: `Bearer ${token}` };
-
-  //   try {
-  //     await axios.delete(
-  //       `http://localhost:5000/requests/delete/${requestID}`,
-  //       {
-  //         headers,
-  //       }
-  //     );
-
-  //     fetchRequests();
-  //   } catch (error) {
-  //     setError(error);
-  //   }
-  // };
+    console.log(id);
+    try {
+      console.log(meals);
+      if (meals.length > 0) {
+        const response = await axios.post("http://localhost:5000/plans/add", {
+          planName,
+          planDescription,
+          meals,
+        });
+        console.log(response.data.data._id);
+        try {
+          const response2 = await axios.put(
+            `http://localhost:5000/requests/updateById/${id}`,
+            {
+              planStatus: "done",
+              planId: response.data.data._id,
+            }
+          );
+          console.log(response2.data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="card-main">
@@ -165,69 +156,144 @@ const addPlan = (e)=>{
           </tr>
         </thead>
         <tbody>
-          {requests && requests.map((request, index) => (
-            <tr key={request._id}>
-              <td>{fullNames[index]}</td>
-              <td>{request.height}</td>
-              <td>{request.weight}</td>
-              <td>{request.desiredWeight}</td>
-              <td>{request.planStatus}</td>
-              <td>
-                <button
-                  className="button button-primary"
-                  onClick={handleOpen}
-                >
-                  Add Plan
-                </button>
-                <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box className="modal-box">
-          <span
-                        onClick={handleClose}
-                        className="box-close"
-                      >
+          {requests &&
+            requests.map((request, index) => (
+              <tr key={request._id}>
+                <td>{fullNames[index]}</td>
+                <td>{request.height}</td>
+                <td>{request.weight}</td>
+                <td>{request.desiredWeight}</td>
+                <td>{request.planStatus}</td>
+                <td>
+                  <button
+                    className="button button-primary"
+                    onClick={handleOpen}
+                  >
+                    Add Plan
+                  </button>
+                  <div
+                          className="button button-secondary"
+                          onClick={()=>{
+                            window.location = `mailto:${email}`
+                          }}
+                        >
+                          send email
+                        </div>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box className="modal-box">
+                      <span onClick={handleClose} className="box-close">
                         &#x2715;
                       </span>
                       <form className="form-input">
-                      <input
-                type="text"
-                placeholder="Plan Name"
-                onChange={(e)=>setPlanName(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Plan Description"
-                onChange={(e)=>setPlanDescription(e.target.value)}
-              />
-             {inputs.map((input, index) => (
+                        <input
+                          type="text"
+                          placeholder="Plan Name"
+                          onChange={(e) => setPlanName(e.target.value)}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Plan Description"
+                          onChange={(e) => setPlanDescription(e.target.value)}
+                        />
+                        {/* {inputs.map((input, index) => (
               index%2==0?
-        <input key={index} type="text" placeholder="Meal Name" />
-        :<input key={index} type="text" placeholder="Meal Description" />
-      ))}
-              <div
-                  className="button button-secondary"
-                  onClick={handleButtonClick}
-                >
-                  Add Meal
-                </div>
+        <input key={index} type="text" placeholder="Meal Name" onChange={(e)=> setMealName(e.target.value)} />
+        :<input key={index} type="text" placeholder="Meal Description" onChange={(e)=> setMealDescription(e.target.value)}/>
+      ))} */}
+
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Name"
+                          onChange={(e) => setMealName1(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Description"
+                          onChange={(e) => setMealDescription1(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Name"
+                          onChange={(e) => setMealName2(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Description"
+                          onChange={(e) => setMealDescription2(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Name"
+                          onChange={(e) => setMealName3(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Description"
+                          onChange={(e) => setMealDescription3(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Name"
+                          onChange={(e) => setMealName4(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Description"
+                          onChange={(e) => setMealDescription4(e.target.value)}
+                        />
+
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Name"
+                          onChange={(e) => setMealName5(e.target.value)}
+                        />
+                        <input
+                          key={index}
+                          type="text"
+                          placeholder="Meal Description"
+                          onChange={(e) => setMealDescription5(e.target.value)}
+                        />
+                        <div
+                          className="button button-secondary"
+                          onClick={handleButtonClick}
+                        >
+                          Add Meal
+                        </div>
+                        <div
+                          className="button button-secondary"
+                          onClick={() => addPlan(request._id)}
+                        >
+                          submit plan
+                        </div>
+                        
                       </form>
-          </Box>
-        </Modal>
-                <button
-                  className="button button-secondary"
-                  // onClick={() => {
-                  //   handleDeleteRequest(request.ID);
-                  // }}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+                    </Box>
+                  </Modal>
+                  <button
+                    className="button button-secondary"
+                    // onClick={() => {
+                    //   handleDeleteRequest(request.ID);
+                    // }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
 

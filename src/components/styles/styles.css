@@ -216,3 +216,14 @@ h2 {
 .box-close:hover{
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  #consultant2 {
+      flex-direction: column;
+  }
+
+  .consultant-flex2 {
+    flex-direction: column;
+  }
+
+}
