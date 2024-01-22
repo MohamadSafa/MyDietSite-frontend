@@ -7,12 +7,11 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [fullName, setFullName] = useState([]);
-  const [email, setEmail] = useState([]);
-  const [password, setPassword] = useState([]);
-  const [role, setRole] = useState([]);
-  const [phoneNumber, setPhoneNumber] = useState([]);
-  const [address, setAddress] = useState([]);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -29,7 +28,6 @@ const UserTable = () => {
     formData.append("password", password);
     formData.append("role", role);
     formData.append("phoneNumber", phoneNumber);
-    formData.append("address", address);
 
     try {
       await axios.post(
@@ -61,21 +59,27 @@ const UserTable = () => {
 
   const handleUpdateClickButton = (user) => {
     setSelectedUser(user);
-    setFullName(user.fullName);
-    setEmail(user.email);
     setShowModal(true);
   };
 
   const handleUpdate = async () => {
+  const updatedFullName = fullName.trim() !== ""?fullName:selectedUser.fullName
+  const updatedEmail = email.trim() !== ""?email:selectedUser.email
+  const updatedPhoneNumber = phoneNumber.trim() !== ""?phoneNumber:selectedUser.phoneNumber
+  const updatedRole = role.trim() !== ""?role:selectedUser.role
+  console.log(updatedFullName)
+  console.log(updatedEmail)
+  console.log(updatedPhoneNumber)
+  console.log(updatedRole)
     const token = sessionStorage.getItem("authToken");
     const headers = { Authorization: `Bearer ${token}` };
     try {
-      await axios.put(
-        `http://localhost:5000/users/update/${selectedUser.ID}`,
-        { fullName, email },
-        {
-          headers,
-        }
+      const table = await axios.put(
+        `http://localhost:5000/users/update/${selectedUser._id}`,
+        { fullName:updatedFullName, email: updatedEmail, role: updatedRole, phoneNumber: updatedPhoneNumber },
+        // {
+        //   headers,
+        // }
       );
       fetchUsers();
       setSelectedUser(null);
@@ -84,25 +88,6 @@ const UserTable = () => {
       setError(error);
     }
   };
-
-  const handleSwitchToAdmin = async (userID) => {
-    const token = sessionStorage.getItem("authToken");
-    const headers = { Authorization: `Bearer ${token}` };
-
-    try {
-      await axios.put(
-        `http://localhost:5000/users/switchToAdmin/${userID}`,
-        {},
-        {
-          headers,
-        }
-      );
-      fetchUsers();
-    } catch (error) {
-      setError(error);
-    }
-  };
-
   const handleDelete = async (userid) => {
     const token = sessionStorage.getItem("authToken");
     const headers = { Authorization: `Bearer ${token}` };
@@ -127,9 +112,9 @@ const UserTable = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Full Name</th>
             <th>Email</th>
+            <th>Phone #</th>
             <th>Role</th>
             <th>Actions</th>
           </tr>
@@ -137,9 +122,9 @@ const UserTable = () => {
         <tbody>
           {users.map((user) => (
             <tr key={user.ID}>
-              <td>{user._id}</td>
               <td>{user.fullName}</td>
               <td>{user.email}</td>
+              <td>{user.phoneNumber}</td>
               <td>{user.role}</td>
               <td>
                 <button
@@ -151,15 +136,6 @@ const UserTable = () => {
                   Update
                 </button>
                 <button
-                  className="button secondary-button"
-                  onClick={() => {
-                    handleSwitchToAdmin(user._id);
-                  }}
-                  disabled={user.role === "admin"}
-                >
-                  Switch to Admin
-                </button>
-                <button
                   className="button delete-button"
                   onClick={() => {
                     handleDelete(user._id);
@@ -169,12 +145,7 @@ const UserTable = () => {
                   Delete
                 </button>
               </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {showModal && (
+              {showModal && (
         <div className="modal">
           <div className="modal-content">
             <span
@@ -189,25 +160,41 @@ const UserTable = () => {
             <div className="form-input">
               <input
                 type="text"
-                value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Full Name"
+                placeholder={user.fullName}
               />
             </div>
             <div className="form-input">
               <input
                 type="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                placeholder={user.email}
               />
+              </div>
+              <div className="form-input">
+              <input
+                type="tel"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                placeholder={user.phoneNumber}
+              />
+              </div>
+              <div className="form-input">
+              <input
+                type="text"
+                onChange={(e) => setRole(e.target.value)}
+                placeholder={user.role}
+              />
+              </div>
               <button className="button button-primary" onClick={handleUpdate}>
                 Update
               </button>
-            </div>
           </div>
         </div>
       )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

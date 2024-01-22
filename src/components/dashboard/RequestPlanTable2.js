@@ -3,35 +3,27 @@ import "../styles/styles.css";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import {getUserID} from "../Util/GetUserData"
+import { getUserID } from "../Util/GetUserData";
 
 const RequestPlanTable2 = () => {
   const [requests, setRequests] = useState();
   const userId = getUserID();
-  
- 
 
-  const fetchRequests = async () => {
-   
-  };
+  const fetchRequests = async () => {};
 
   useEffect(() => {
-     axios
+    axios
       .get(`http://localhost:5000/requests/getRequestByUserId/${userId}`)
       .then((response) => {
-       // console.log(response.data);
+        // console.log(response.data);
         setRequests(response.data.data);
       })
       .catch((error) => {
-        console.error(error)
+        console.error(error);
       });
   }, []);
-  
-const addPlan = (e)=>{
-  e.preventDefault()
-}
 
- console.log(requests)
+  console.log(requests);
   return (
     <div className="card-main">
       <h1 className="dashboard-title"> Requests Table </h1>
@@ -47,8 +39,8 @@ const addPlan = (e)=>{
             <th>Plan Status</th>
           </tr>
         </thead>
-       {requests && <tbody>
-          
+        {requests && (
+          <tbody>
             <tr key={requests._id}>
               <td>{requests.userId.fullName}</td>
               <td>{requests.height}</td>
@@ -56,48 +48,44 @@ const addPlan = (e)=>{
               <td>{requests.desiredWeight}</td>
               <td>{requests.planStatus}</td>
             </tr>
-        
-        </tbody>
-}
-      </table>
-      <table>
-      <thead>
-          <tr>
-            <th colSpan="2">Plan</th>
-          </tr>
+          </tbody>
+        )}
+      </table><br/><br/>
+      {
+        requests && requests.planId &&
+        <>
+        <h1 className="dashboard-title"> Your Plan </h1>
+
+      <table className="table">
+        <thead>
           <tr>
             <th>Plan Name</th>
-          </tr>
-          <tr>
             <th>Plan Description</th>
-          </tr>
-          <tr>
             <th>Meal 1</th>
-          </tr>
-          <tr>
             <th>Meal 2</th>
-          </tr>
-          <tr>
             <th>Meal 3</th>
-          </tr>
-          <tr>
             <th>Meal 4</th>
-          </tr>
-          <tr>
             <th>Meal 5</th>
           </tr>
         </thead>
-       {requests && <tbody>
-        
-          
-          
-        
-        </tbody>
-}
+        {requests && requests.planId && (
+          <tbody>
+            <tr key={requests._id}>
+              <td>{requests.planId.planName}</td>
+              <td>{requests.planId.planDescription}</td>
+              <td>{requests.planId.meals[0].mealName}<br/>{requests.planId.meals[0].mealDescription}</td>
+              <td>{requests.planId.meals[1].mealName}<br/>{requests.planId.meals[1].mealDescription}</td>
+              <td>{requests.planId.meals[2].mealName}<br/>{requests.planId.meals[2].mealDescription}</td>
+              <td>{requests.planId.meals[3].mealName}<br/>{requests.planId.meals[3].mealDescription}</td>
+              <td>{requests.planId.meals[4].mealName}<br/>{requests.planId.meals[4].mealDescription}</td>
+            </tr>
+          </tbody>
+        )}
       </table>
+      </>
+      }
       
     </div>
-    
   );
 };
 

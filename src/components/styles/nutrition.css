@@ -1,4 +1,11 @@
-
+#nutrition img:hover{
+    scale:1.1;
+    cursor:pointer;
+}
+#strength img:hover{
+    scale:1.1;
+    cursor:pointer;
+}
 
 @media (max-width: 600px) {
     #nutrition, #strength{

@@ -112,6 +112,8 @@
 
     .object-cover {
         object-fit:contain;
+        position: absolute;
+        bottom: 0;
     }
 
 }

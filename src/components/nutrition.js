@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import smoothie from '../images/nutrition1.jpeg'
 import oatmeal from '../images/nutrition2.jpeg'
@@ -12,19 +13,19 @@ const Nutrition = () => {
 
             <div id="nutrition" className="flex pb-20 gap-8 m-10 justify-center">
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={smoothie} alt="" />
+                    <Link to="https://www.delish.com/cooking/g1457/healthy-smoothie-recipes/" target='_blank'><img className="block justify-center items-center rounded-3xl" src={smoothie} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         SMOOTHIE RECIPE
                     </p>
                 </div>
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={oatmeal} alt="" />
+                <Link to="https://loseweightbyeating.com/healthy-oatmeal-recipes-breakfast-weight-loss/" target='_blank'><img className="block justify-center items-center rounded-3xl" src={oatmeal} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         NUTRITIOUS BREAKFAST
                     </p>
                 </div>
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={fruits} alt="" />
+                <Link to="https://www.healthline.com/health/balanced-diet" target='_blank'><img className="block justify-center items-center rounded-3xl" src={fruits} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         BALANCE YOUR DIET
                     </p>

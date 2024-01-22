@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import kettlebell from '../images/strength1.jpeg'
 import gear from '../images/strength2.jpeg'
@@ -12,19 +13,19 @@ const Strength = () => {
 
             <div id="strength" className="flex pb-20 gap-8 m-10 justify-center">
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={kettlebell} alt="" />
+                <Link to="https://www.menshealth.com/" target='_blank'><img className="block justify-center items-center rounded-3xl" src={kettlebell} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         KETTLEBELL EXERCISES
                     </p>
                 </div>
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={gear} alt="" />
+                <Link to="https://www.menshealth.com/" target='_blank'><img className="block justify-center items-center rounded-3xl" src={gear} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         YOUR GEAR
                     </p>
                 </div>
                 <div className="">
-                    <img className="block justify-center items-center rounded-3xl" src={form} alt="" />
+                <Link to="https://www.menshealth.com/fitness/" target='_blank'><img className="block justify-center items-center rounded-3xl" src={form} alt="" /></Link>
                     <p className="text-white text-xl text-center pt-10" style={{ color: "black" }}>
                         PROPER FORM
                     </p>

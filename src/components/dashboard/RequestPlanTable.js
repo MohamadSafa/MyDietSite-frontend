@@ -137,14 +137,14 @@ const RequestPlanTable = () => {
       <h1 className="dashboard-title"> Requests Table </h1>
       {/* {error && <p className="error-message">{error.message}</p>} */}
 
-      <button
+      {/* <button
         className="button button-primary"
         // onClick={() => {
         //   setShowAddModal(true);
         // }}
       >
         Add Request
-      </button>
+      </button> */}
       <table className="table">
         <thead>
           <tr>
@@ -153,6 +153,7 @@ const RequestPlanTable = () => {
             <th>Weight</th>
             <th>desiredWeight</th>
             <th>Plan Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -171,14 +172,14 @@ const RequestPlanTable = () => {
                   >
                     Add Plan
                   </button>
-                  <div
-                          className="button button-secondary"
+                  <button
+                          className="button button-primary"
                           onClick={()=>{
                             window.location = `mailto:${email}`
                           }}
                         >
-                          send email
-                        </div>
+                          Send Email
+                        </button>
                   <Modal
                     open={open}
                     onClose={handleClose}

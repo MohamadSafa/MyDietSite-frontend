@@ -53,9 +53,9 @@ const toggleBurgerMenu = () => {
             )}
           </li>
           <li>
-          <Link to="/">
+          {role !== null && <Link to="/">
           <img className="my-request" onClick={goToRequests} src={Requests} alt="requests icon"></img>
-        </Link>
+        </Link>}
           </li>
         </ul>
       </div>

@@ -40,37 +40,37 @@ function Footerhomepage() {
     });
 
     return (
-    <div>
-        <img src={footer} className="size-16 h-96 w-full pt-10 object-cover" alt="footer image"></img>
+    <div style={{position:"relative"}}>
+        <img src={footer} style={{zIndex:"0"}} className="size-16 h-96 w-full pt-10 object-cover" alt="footer image"></img>
         <div id="Contact" className="footer-container-homepage">
             </div>
             <div className="footer-social full-width">
                 <div>
-                    <h2 className="footer-social-header">+961 81 001996</h2>
-                    <img src={phone} className='phone' alt="" />
+                    <h2 style={{zIndex:"1"}} className="footer-social-header">+961 81 001996</h2>
+                    <img style={{zIndex:"1"}} src={phone} className='phone' alt="" />
                 </div>
                 <div className='up'>
                 <Link to="">
-                        <img src={up} onClick={window.scroll(0,0)}  alt="" />
+                        <img src={up} style={{zIndex:"1"}} onClick={window.scroll(0,0)}  alt="" />
                     </Link>
                 </div>
                 <div>
-                    <h2 className="phone-number">Follow us</h2>
+                    <h2 style={{zIndex:"1"}} className="phone-number">Follow us</h2>
                 </div>
                 <div className="footer-social-icons">
                     <Link to="https://www.facebook.com/DietSite" target='_blank'>
-                        <img src={facebook} alt="facebook-MyDietSite" />
+                        <img src={facebook} style={{zIndex:"1"}} alt="facebook-MyDietSite" />
                     </Link>
                     <Link to="https://www.instagram.com/safamux/" target='_blank'>
-                        <img src={instagram} alt="instagram Safa" />
+                        <img src={instagram} style={{zIndex:"1"}} alt="instagram Safa" />
                     </Link>
                     <Link to="https://www.linkedin.com/in/mohamad-safa/" target='_blank'>
-                        <img src={linkedin} alt="linkedin mohamad-safa" />
+                        <img src={linkedin}  style={{zIndex:"1"}} alt="linkedin mohamad-safa" />
                     </Link>
                 </div>
             </div>
             <div className="footer-copyright">
-                <p id="copyright">© 2024 All rights reserved</p>
+                <p id="copyright" style={{zIndex:"1"}}>© 2024 All rights reserved</p>
             </div>
         </div>
     );

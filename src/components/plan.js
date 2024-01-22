@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import { getUserID } from './Util/GetUserData';
 import "./styles/about.css";
 
@@ -9,11 +9,18 @@ const userId = getUserID();
 const [height, setHeight] = useState("");
 const [weight, setWeight] = useState("");
 const [desiredWeight, setDesiredWeight] = useState("");
-
+const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    if(userId === null){
+      navigate("/login");
+      return;
+    }
+    if(!height || !weight || !desiredWeight){
+      alert("All fields must be filled");
+      return;
+    }
     axios.post('http://localhost:5000/requests/add', {userId, height, weight, desiredWeight})
     .then((response) => {
       console.log(response.data)
