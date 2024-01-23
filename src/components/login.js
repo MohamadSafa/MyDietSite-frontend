@@ -63,7 +63,7 @@ function LoginForm() {
     };
     try {
       const response = await axios.post(
-        `http://localhost:5000/users/register`,
+        `${process.env.REACT_APP_URL}/users/register`,
         newUser
       );
       const data = response.data;
@@ -80,7 +80,7 @@ function LoginForm() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/users/login`, {
+      const response = await axios.post(`${process.env.REACT_APP_URL}/users/login`, {
         email,
         password,
       });

@@ -13,7 +13,7 @@ const RequestPlanTable2 = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/requests/getRequestByUserId/${userId}`)
+      .get(`${process.env.REACT_APP_URL}/requests/getRequestByUserId/${userId}`)
       .then((response) => {
         // console.log(response.data);
         setRequests(response.data.data);

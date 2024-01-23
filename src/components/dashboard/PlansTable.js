@@ -32,7 +32,7 @@ const PlansTable = () => {
       const updatedPlanDescription = planDescription.trim() !== ""?planDescription:selectedPlan.planDescription
       
       axios.put(
-        `http://localhost:5000/plans/update/${selectedPlan._id}`,
+        `${process.env.REACT_APP_URL}/plans/update/${selectedPlan._id}`,
         {planName:updatedPlanName, planDescription: updatedPlanDescription, meals
           
         },
@@ -52,7 +52,7 @@ const PlansTable = () => {
 
   const fetchPlans = () => {
     axios
-      .get("http://localhost:5000/plans/getAll")
+      .get("${process.env.REACT_APP_URL}/plans/getAll")
       .then((response) => {
         console.log(response);
         setPlans(response.data.data);
@@ -68,7 +68,7 @@ const PlansTable = () => {
     const headers = { Authorization: `Bearer ${token}` };
     try {
       const response = await axios.delete(
-        `http://localhost:5000/plans/delete/${planID}`,
+        `${process.env.REACT_APP_URL}/plans/delete/${planID}`,
       );
       console.log(response);
       fetchPlans();

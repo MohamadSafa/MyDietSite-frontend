@@ -47,7 +47,7 @@ const RequestPlanTable = () => {
 
   const fetchRequests = async () => {
     await axios
-      .get("http://localhost:5000/requests/getAll")
+      .get("${process.env.REACT_APP_URL}/requests/getAll")
       .then((response) => {
         console.log(response.data);
         setRequests(response.data.data);
@@ -66,7 +66,7 @@ const RequestPlanTable = () => {
     try {
       const allNames = requests.map(async (request) => {
         const response = await axios.get(
-          `http://localhost:5000/users/getUserId/${request.userId}`
+          `${process.env.REACT_APP_URL}/users/getUserId/${request.userId}`
         );
         console.log(response.data)
         setEmail(response.data.data.email)
@@ -108,7 +108,7 @@ const RequestPlanTable = () => {
     try {
       console.log(meals);
       if (meals.length > 0) {
-        const response = await axios.post("http://localhost:5000/plans/add", {
+        const response = await axios.post("${process.env.REACT_APP_URL}/plans/add", {
           planName,
           planDescription,
           meals,
@@ -116,7 +116,7 @@ const RequestPlanTable = () => {
         console.log(response.data.data._id);
         try {
           const response2 = await axios.put(
-            `http://localhost:5000/requests/updateById/${id}`,
+            `${process.env.REACT_APP_URL}/requests/updateById/${id}`,
             {
               planStatus: "done",
               planId: response.data.data._id,
