@@ -165,7 +165,7 @@
 
 }
 
-@media (max-width: 844px) {
+@media(min-width: 601px) and (max-width: 844px) {
     .responsive-login {
         font-size: x-small;
         flex-direction: row;

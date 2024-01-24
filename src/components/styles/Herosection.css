@@ -52,7 +52,7 @@
     }
 }
 
-@media (max-width: 844px) {
+@media (min-width: 601px) and (max-width: 844px) {
     .Learn-more {
         top: 70%;
         left: 23%;

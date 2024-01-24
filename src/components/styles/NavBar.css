@@ -139,6 +139,11 @@
         display : block;
     }
 
+    .my-request {
+        width: 40px;
+        margin-left: 0px;
+    }
+
     .Mobile-Logo {
         width:62%;
 
@@ -149,7 +154,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 25px;
     }
 
     .Mobile-Nav {
@@ -172,9 +177,24 @@
         scale: 1.1;
     }
 
+    .Links4 ul {
+        display: flex;
+        font-size: medium;
+        justify-content: space-between;
+        color: black;
+        padding-right: 50%;
+        gap: 5%;
+    }
+
+    .Logo4 {
+        width: 35%;
+        margin: 0px 0px;
+        margin-right: 2.5%;
+    }
+
 }
 
-@media (max-width: 844px) {
+@media (min-width: 601px) and (max-width: 844px) {
     .Hero-Mobile{
         display : block;
     }

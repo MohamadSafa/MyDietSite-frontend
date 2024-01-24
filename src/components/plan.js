@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from "react-hot-toast";
 import axios from 'axios';
 import { Link , useNavigate} from 'react-router-dom';
 import { getUserID } from './Util/GetUserData';
@@ -23,9 +24,12 @@ const navigate = useNavigate();
     }
     axios.post(`${process.env.REACT_APP_URL}/requests/add`, {userId, height, weight, desiredWeight})
     .then((response) => {
+      toast.success("Request Sent Successfully!")
+      navigate("/myrequests")
       console.log(response.data)
     })
     .catch((error)=>{
+      toast.error("Unable to send Request")
       console.error(error)
     })
   };

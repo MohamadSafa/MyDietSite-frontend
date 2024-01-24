@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 import Logo from "../images/logo2.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -47,11 +48,17 @@ function LoginForm() {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (
       email == "" ||
-      !emailTest.test(email) ||
-      !passwordTest.test(password) ||
       password == ""
     ) {
-      alert("Please fill in all fields correctly!");
+      toast.error("Please fill in all fields correctly!");
+      return;
+    }
+    else if (!emailTest.test(email)) {
+      toast.error("Invalid Email format.");
+      return;
+    }
+    else if (!passwordTest.test(password)) {
+      toast.error("Password must contain at least one uppercase letter, one lowercase letter, one special character and minimum lenght of 8 Characters");
       return;
     }
     const newUser = {
@@ -71,8 +78,10 @@ function LoginForm() {
       setFullName("");
       setEmail("");
       setPassword("");
+      toast.success("Registered Successfully!")
       handleBackToLogin();
     } catch (error) {
+      toast.error("Registration Failed")
       console.log("Error while registering", error);
     }
   };
@@ -86,11 +95,12 @@ function LoginForm() {
       });
       const userData = response.data;
       console.log(response.data);
+      toast.success("Logged In Successfully!")
       navigate("/");
       sessionStorage.setItem("authToken", userData.token);
     } catch (error) {
       if (error?.response?.data?.error) {
-        alert(error.response.data.error);
+        toast.error(error.response.data.error);
       }
       console.error("Error while logging in:", error);
     }

@@ -2,6 +2,7 @@ import "./styles/NavBar.css";
 import Logo from "../images/Logo.png";
 import Burger from "../images/burger-menu.png"
 import Requests from "../images/myrequests.png"
+import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getUserRole } from "./Util/GetUserData";
@@ -10,7 +11,7 @@ const NavBarHome = () => {
   const navigate = useNavigate();
   const role = getUserRole();
   const token = sessionStorage.getItem('authToken')
-  const handlelogout = () => {sessionStorage.removeItem('authToken'); navigate("/login")};
+  const handlelogout = () => {sessionStorage.removeItem('authToken'); toast.success("Logged out Successfully!"); navigate("/login")};
   useEffect(()=>{},[handlelogout])
   const goToRequests = ()=>{
     if(role === "admin"){navigate("/admin/*")
@@ -67,6 +68,9 @@ const toggleBurgerMenu = () => {
           <img src={Logo} alt="logo icon"/>
             </Link>
             </div>
+            {role !== null && <Link to="/">
+          <img className="my-request" onClick={goToRequests} src={Requests} alt="requests icon"></img>
+        </Link>}
           <div className="Mobile-Navbar">
             <div className="burger-icon">
         <Link to="/">
