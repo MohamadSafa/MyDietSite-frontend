@@ -31,7 +31,7 @@ const UserTable = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/users/register",
+        `${process.env.REACT_APP_URL}/users/register`,
         formData,
         {
           headers,
@@ -47,7 +47,7 @@ const UserTable = () => {
 
   const fetchUsers = () => {
     axios
-      .get("http://localhost:5000/users/getAll")
+      .get(`${process.env.REACT_APP_URL}/users/getAll`)
       .then((response) => {
         console.log(response);
         setUsers(response.data.data);
@@ -75,7 +75,7 @@ const UserTable = () => {
     const headers = { Authorization: `Bearer ${token}` };
     try {
       const table = await axios.put(
-        `http://localhost:5000/users/update/${selectedUser._id}`,
+        `${process.env.REACT_APP_URL}/users/update/${selectedUser._id}`,
         { fullName:updatedFullName, email: updatedEmail, role: updatedRole, phoneNumber: updatedPhoneNumber },
         // {
         //   headers,
@@ -94,7 +94,7 @@ const UserTable = () => {
     console.log(headers);
     try {
       await axios.delete(
-        `http://localhost:5000/users/delete/${userid}`,
+        `${process.env.REACT_APP_URL}/users/delete/${userid}`,
         {
           headers,
         }
