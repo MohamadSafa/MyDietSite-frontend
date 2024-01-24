@@ -164,3 +164,37 @@
     }
 
 }
+
+@media (max-width: 844px) {
+    .responsive-login {
+        font-size: x-small;
+        flex-direction: row;
+        align-items:unset;
+        margin-bottom: 2%;
+        margin-top: -15%;
+    }
+
+    .responsive-login button {
+        margin-left: 28%;
+    }
+
+    #mission {
+        margin-bottom: 20%;
+        margin-top: -10%;
+    }
+
+    #Plan {
+        margin-top: -12%;
+    }
+
+    .content-plan {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: -50%;
+    }
+
+    .flex4 {
+        padding-top: 5%;
+        padding-bottom: -12%;
+    }
+}

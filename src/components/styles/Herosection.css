@@ -51,3 +51,12 @@
       font-size: small;
     }
 }
+
+@media (max-width: 844px) {
+    .Learn-more {
+        top: 70%;
+        left: 23%;
+        font-size: x-large;
+      }
+
+}

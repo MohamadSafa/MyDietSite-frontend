@@ -108,7 +108,7 @@ const RequestPlanTable = () => {
     try {
       console.log(meals);
       if (meals.length > 0) {
-        const response = await axios.post("${process.env.REACT_APP_URL}/plans/add", {
+        const response = await axios.post(`${process.env.REACT_APP_URL}/plans/add`, {
           planName,
           planDescription,
           meals,

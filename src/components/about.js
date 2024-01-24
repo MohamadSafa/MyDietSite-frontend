@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import "./styles/about.css";
 
 const AboutUs = () => {
+    const token = sessionStorage.getItem("authToken");
+    const handlelogout = () => {sessionStorage.removeItem('authToken')};
     return (
         <div className='about-title' id="About">
 
@@ -13,11 +15,15 @@ const AboutUs = () => {
                     GET STARTED !
                 </div>
                 <div className="flex center items-center text-4xl">
-                <Link to="/login">
+                {!token?<Link to="/login">
                     <button className="text-white text-xl mx-40 px-10 py-3 border-2 border-black hover:bg-[#5FD3AA] rounded-none" style={{ color: "black" }}>
                         LOGIN
                     </button>
-                    </Link>
+                    </Link>:<Link to="/login">
+                    <button onClick={handlelogout} className="text-white text-xl mx-40 px-10 py-3 border-2 border-black hover:bg-[#5FD3AA] rounded-none" style={{ color: "black" }}>
+                        LOGOUT
+                    </button>
+                    </Link>}
                 </div>
             </div>
 

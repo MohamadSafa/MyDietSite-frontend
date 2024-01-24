@@ -62,16 +62,18 @@ const toggleBurgerMenu = () => {
       </div>
        <div className="Hero-Mobile">
         <div className="Mobile">
+        <div className="Mobile-Logo">
+            <Link to="/">
+          <img src={Logo} alt="logo icon"/>
+            </Link>
+            </div>
           <div className="Mobile-Navbar">
-            <button className="Mobile-Burger" onClick={toggleBurgerMenu}>
-            </button>
-
-            <div class="burger-icon">
+            <div className="burger-icon">
         <Link to="/">
-          <img src={Burger} alt="burger icon"></img>
+          <img src={Burger} alt="burger icon" onClick={toggleBurgerMenu}/>
         </Link>
             </div>
-            <div className={`Mobile-Nav ${isBurgerActive ? "active" : ""}`}>
+            {isBurgerActive && <div className={`Mobile-Nav ${isBurgerActive ? "active" : ""}`}>
               <a className="Mobile-Nav-Title" href="/#About">
                 About
               </a>
@@ -87,12 +89,7 @@ const toggleBurgerMenu = () => {
               <a className="Mobile-Nav-Title" href="#Contact">
                 Contact
               </a>
-            </div>
-            <div className="Mobile-Logo">
-            <Link to="/">
-          <img src={Logo} alt="logo icon"></img>
-            </Link>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

@@ -134,27 +134,84 @@
 
 
 /* Responsive */
+@media (max-width: 600px) {
+    .Hero-Mobile{
+        display : block;
+    }
+
+    .Mobile-Logo {
+        width:62%;
+
+    }
+
+    .Mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .Mobile-Nav {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        position: absolute;
+        right: 0;
+        color: white;
+        background-color: #5FD3AA;
+        z-index: 2;
+    }
+
+    .Mobile-Nav a {
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .Mobile-Nav a:hover {
+        scale: 1.1;
+    }
+
+}
 
 @media (max-width: 844px) {
     .Hero-Mobile{
         display : block;
     }
-    .nav-bar {
-        display: none;
+
+    .Mobile-Logo {
+        width:62%;
+
     }
 
-    .Logo {
-        width: 50%;
+    .Mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
     }
 
-    .Links4 ul,
-    .Links5 ul {
-        gap: 15%;
+    .Mobile-Nav {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        position: absolute;
+        right: 0;
+        color: white;
+        background-color: #5FD3AA;
+        z-index: 2;
     }
 
-    .learn-more {
-        left:5%;
+    .Mobile-Nav a {
+        font-weight: 400;
+        font-size: 30px;
     }
+
+    .Mobile-Nav a:hover {
+        scale: 1.1;
+    }
+
 }
 
 @media (max-width: 991.98px) {
@@ -163,7 +220,7 @@
     }
 
     .Logo {
-        width: 100%;
+        display: none;
     }
 
     .Links {

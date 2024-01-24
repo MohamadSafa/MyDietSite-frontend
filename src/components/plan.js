@@ -21,7 +21,7 @@ const navigate = useNavigate();
       alert("All fields must be filled");
       return;
     }
-    axios.post('${process.env.REACT_APP_URL}/requests/add', {userId, height, weight, desiredWeight})
+    axios.post(`${process.env.REACT_APP_URL}/requests/add`, {userId, height, weight, desiredWeight})
     .then((response) => {
       console.log(response.data)
     })
