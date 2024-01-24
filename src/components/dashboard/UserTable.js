@@ -1,5 +1,6 @@
 import axios from "axios";
 import "../styles/styles.css";
+import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { getUserID } from "../Util/GetUserData";
 
@@ -91,7 +92,6 @@ const UserTable = () => {
   const handleDelete = async (userid) => {
     const token = sessionStorage.getItem("authToken");
     const headers = { Authorization: `Bearer ${token}` };
-    console.log(headers);
     try {
       await axios.delete(
         `${process.env.REACT_APP_URL}/users/delete/${userid}`,
@@ -100,6 +100,7 @@ const UserTable = () => {
         }
       );
       fetchUsers();
+      toast.success("User Deleted Successfully!")
     } catch (error) {
       setError(error);
     }

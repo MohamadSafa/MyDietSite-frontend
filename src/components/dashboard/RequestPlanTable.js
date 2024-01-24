@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/styles.css";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -31,19 +32,6 @@ const RequestPlanTable = () => {
   const [mealName5, setMealName5] = useState("");
   const [mealDescription5, setMealDescription5] = useState("");
   const [meals, setMeals] = useState([]);
-
-  console.log(meals);
-
-  // const [selectedRequest, setSelectedRequest] = useState(null);
-  // const [userId, setUserId] = useState("");
-  // const [plans, setPlans] = useState(0);
-  // const [height, setHeight] = useState("");
-  // const [weight, setWeight] = useState("");
-  // const [desiredWeight, setDesiredWeight] = useState("");
-  // const [planStatus, setPlanStatus] = useState("");
-  // const [error, setError] = useState(null);
-  // const [showUpdateModal, setShowUpdateModal] = useState(false);
-  // const [showAddModal, setShowAddModal] = useState(false);
 
   const fetchRequests = async () => {
     await axios
@@ -79,6 +67,15 @@ const RequestPlanTable = () => {
       console.error(error);
     }
   };
+
+  const handleDeleteRequest = async (id)=>{
+    await axios.delete(`${process.env.REACT_APP_URL}/requests/delete/${id}`)
+ .then(()=>{
+  fetchRequests();
+  toast.success("Deleted Successfully!");
+ })
+ .catch((err)=>toast.error("Error deleting request!"));
+  }
 
   const addPlan = async (id) => {
     setMeals([
@@ -122,7 +119,10 @@ const RequestPlanTable = () => {
               planId: response.data.data._id,
             }
           );
+  
           console.log(response2.data);
+          setOpen(false);
+          toast.success("Plan Added Successfully!")
         } catch (error) {
           console.error(error);
         }
@@ -280,9 +280,9 @@ const RequestPlanTable = () => {
                   </Modal>
                   <button
                     className="button button-secondary"
-                    // onClick={() => {
-                    //   handleDeleteRequest(request.ID);
-                    // }}
+                    onClick={() => {
+                      handleDeleteRequest(request._id);
+                    }}
                   >
                     Delete
                   </button>
