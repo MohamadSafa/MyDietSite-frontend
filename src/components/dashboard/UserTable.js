@@ -136,7 +136,7 @@ const UserTable = () => {
                   Update
                 </button>
                 <button
-                  className="button delete-button"
+                  className="button button-secondary"
                   onClick={() => {
                     handleDelete(user._id);
                   }}

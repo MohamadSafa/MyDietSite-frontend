@@ -22,6 +22,32 @@
   margin: 30px auto;
 }
 
+.form-input1 {
+  margin-bottom: 5%;
+}
+
+.form-input1 textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.form-input1 label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input1 input {
+  width: calc(100% - 20px); /* Adjust width to consider padding */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+
 .form-input {
   margin-bottom: 15px;
   height: 50%;
@@ -41,7 +67,7 @@
 }
 
 .form-input input {
-  width: calc(100% - 20px); /* Adjust width to consider padding */
+  width: calc(40% - 20px); /* Adjust width to consider padding */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -79,7 +105,9 @@ body {
 }
 
 h2 {
+  font-size: x-large;
   margin-top: 0;
+  margin-bottom: 3%;
 }
 
 .modal {
@@ -103,13 +131,15 @@ h2 {
 }
 
 .close {
-  color: #aaa;
+  color: black;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
 }
 
-.close:hover,
+.close:hover {
+  color: #5FD3AA;
+}
 .close:focus {
   color: black;
   text-decoration: none;
@@ -146,7 +176,7 @@ h2 {
 }
 
 .button-secondary:hover {
-  background-color: #545b62;
+  background-color: red;
 }
 .table {
   width: 100%;
@@ -215,6 +245,30 @@ h2 {
 }
 .box-close:hover{
   cursor: pointer;
+}
+
+.button-secondary1 {
+  background-color: #6c757d;
+  color: white;
+
+}
+
+.button-secondary1:hover {
+  background-color: #5FD3AA;
+  color: white;
+}
+
+.button1 {
+  padding: 10px 15px;
+  margin: 5px;
+  margin-top: 0.5%;
+  margin-left: 40%;
+  margin-right: 37%;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 @media (max-width: 600px) {

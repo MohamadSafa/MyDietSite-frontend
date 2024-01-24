@@ -47,7 +47,7 @@ const RequestPlanTable = () => {
 
   const fetchRequests = async () => {
     await axios
-      .get("${process.env.REACT_APP_URL}/requests/getAll")
+      .get(`${process.env.REACT_APP_URL}/requests/getAll`)
       .then((response) => {
         console.log(response.data);
         setRequests(response.data.data);
@@ -196,7 +196,7 @@ const RequestPlanTable = () => {
                           placeholder="Plan Name"
                           onChange={(e) => setPlanName(e.target.value)}
                         />
-                        <input
+                        <input className="form-input1"
                           type="text"
                           placeholder="Plan Description"
                           onChange={(e) => setPlanDescription(e.target.value)}
@@ -210,75 +210,69 @@ const RequestPlanTable = () => {
                         <input
                           key={index}
                           type="text"
-                          placeholder="Meal Name"
+                          placeholder="Meal Name 1"
                           onChange={(e) => setMealName1(e.target.value)}
                         />
-                        <input
+                        <input className="form-input1"
                           key={index}
                           type="text"
-                          placeholder="Meal Description"
+                          placeholder="Meal Description 1"
                           onChange={(e) => setMealDescription1(e.target.value)}
                         />
                         <input
                           key={index}
                           type="text"
-                          placeholder="Meal Name"
+                          placeholder="Snack Name 1"
                           onChange={(e) => setMealName2(e.target.value)}
                         />
-                        <input
+                        <input className="form-input1"
                           key={index}
                           type="text"
-                          placeholder="Meal Description"
+                          placeholder="Snack Description 1"
                           onChange={(e) => setMealDescription2(e.target.value)}
                         />
                         <input
                           key={index}
                           type="text"
-                          placeholder="Meal Name"
+                          placeholder="Meal Name 2"
                           onChange={(e) => setMealName3(e.target.value)}
                         />
                         <input
-                          key={index}
+                          key={index} className="form-input1"
                           type="text"
-                          placeholder="Meal Description"
+                          placeholder="Meal Description 2"
                           onChange={(e) => setMealDescription3(e.target.value)}
                         />
                         <input
                           key={index}
                           type="text"
-                          placeholder="Meal Name"
+                          placeholder="Snack Name 2"
                           onChange={(e) => setMealName4(e.target.value)}
                         />
-                        <input
+                        <input className="form-input1"
                           key={index}
                           type="text"
-                          placeholder="Meal Description"
+                          placeholder="Snack Description 2"
                           onChange={(e) => setMealDescription4(e.target.value)}
                         />
 
                         <input
                           key={index}
                           type="text"
-                          placeholder="Meal Name"
+                          placeholder="Meal Name 3"
                           onChange={(e) => setMealName5(e.target.value)}
                         />
-                        <input
+                        <input className="form-input1"
                           key={index}
                           type="text"
-                          placeholder="Meal Description"
+                          placeholder="Meal Description 3"
                           onChange={(e) => setMealDescription5(e.target.value)}
                         />
                         <div
-                          className="button button-secondary"
-                          onClick={handleButtonClick}
-                        >
-                          Add Meal
-                        </div>
-                        <div
-                          className="button button-secondary"
+                          className="button1 button-secondary1"
                           onClick={() => addPlan(request._id)}
                         >
-                          submit plan
+                          SUBMIT PLAN
                         </div>
                         
                       </form>

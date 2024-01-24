@@ -24,7 +24,24 @@
   max-width: 60%;
 }
 
-@media (max-width: 600px){
+.mission-container {
+  margin-bottom: 300px;
+}
+
+.stories-container {
+  margin-bottom: 210px;
+}
+
+@media (max-width: 600px) {
+
+  .flex3 {
+    padding-left: 1%;
+    padding-right: 1%;
+    text-align: center;
+    font-size: large;
+    
+  }
+
   .consultant-flex {
     flex-direction: column;
     row-gap: 15px;
@@ -32,16 +49,30 @@
 
   #consultant2 {
     flex-direction: column;
-  
-}
+    margin-top: -20%;
+  }
 
-.consultant-flex2 img {
-  max-width: 100%;
-}
+  .consultant-flex2 img {
+    max-width: 100%;
+    padding-top: 15%;
+  }
 
+  .success-content {
+    margin-top: -30%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
 
+  .success-content2 {
+    margin-top: -3%;
+  }
 
-  
+  .ideal {
+    gap: 1%;
+    font-size: xx-large;
+    margin-top: 12%;
+    margin-bottom: -58%;
+  }
 }
 
 /* .consultant-flex2 p {

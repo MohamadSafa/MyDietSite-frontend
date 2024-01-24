@@ -54,30 +54,6 @@
         cursor: pointer;
 }
 
-@media screen and (min-width:767px) and (max-width:1023px){
-    /* .Abouts{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .as-rightSide{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .as-imageOfAbout{
-        width: 100%;
-    } */
-}
-
-@media (max-width: 600px) {
-    .responsive-login {
-        flex-direction: column;
-        align-items: center;
-    }
-    .responsive-login button {
-        margin: 0%;
-    }
-}
 
 .lgi :hover{
     transition: 0.2s;
@@ -100,4 +76,91 @@
     transition: 0.2s;
     background-color: #5FD3AA ;
     color: white;
+}
+
+.plan-container {
+    margin-bottom: 350px;
+}
+
+
+
+
+@media screen and (min-width:767px) and (max-width:1023px){
+    /* .Abouts{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .as-rightSide{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .as-imageOfAbout{
+        width: 100%;
+    } */
+}
+
+@media (max-width: 600px) {
+    .responsive-login {
+        font-size: x-small;
+        flex-direction: row;
+        align-items:unset;
+        margin: -7%;
+        padding-right: 50%;
+        margin-left: -19%;
+        margin-bottom: 2%;
+    }
+    .responsive-login button {
+        margin: 0%;
+    }
+
+    .flex5 {
+        justify-content: center;
+        padding-top: -100%;
+        padding-bottom: 2%;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .flex2 {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .Header-Desktop {
+        height: 120px;
+    }
+
+    #mission {
+        margin-bottom: 20%;
+        margin-top: -10%;
+    }
+
+    #Plan {
+        margin-top: -8%;
+    }
+
+    .content-plan {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: -50%;
+    }
+
+    .mb-4 {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .form-plan {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10%;
+    }
+
+    .submit-button2 {
+        align-items: center;
+        margin-left: 30%;
+        margin-top: 2%;
+    }
+
 }

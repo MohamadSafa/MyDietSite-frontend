@@ -7,9 +7,19 @@
     cursor:pointer;
 }
 
+
+.strength-container{
+    margin-bottom: 400px;
+}
 @media (max-width: 600px) {
     #nutrition, #strength{
         flex-direction: column;
+    }
+
+    .flex4 {
+        font-size: xx-large;
+        gap: 3%;
+        padding-bottom: 2%;
     }
 
 }

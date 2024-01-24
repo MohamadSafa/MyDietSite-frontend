@@ -31,15 +31,15 @@ const navigate = useNavigate();
   };
 
   return (
-    <div>
+    <div className='plan-container'>
       <div id='Plan' className="text-center text-5xl pt-10 pb-20 relative" style={{ color: "black" }}> YOUR PLAN
         <div className="block rounded-3xl">
           <p className="text-center text-2xl pt-5 pb-10">Instant plans in the same day</p>
           <div className="block relative">
-            <div className="text-2xl px-20 text-left pb-10">
+            <div className="text-2xl px-20 text-left pb-10 content-plan">
               This page includes a form to fill for: Height, Current Weight, Desired Weight, Gender & Email.
             </div>
-            <div className="text-2xl px-20 text-left">
+            <div className="text-2xl px-20 text-left content-plan">
               In this section afterwards, your consultant will calculate the timing and the effort needed (meal plans) to achieve the desired weight then have an e-mail reply within 24 hours.
             </div>
           </div>
@@ -47,8 +47,8 @@ const navigate = useNavigate();
       </div>
 
       <div className="container mx-auto mt-10">
-        <h2 className="text-3xl font-bold mb-5">Fill here your info.</h2>
-        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <h2 className="text-3xl font-bold mb-5 content-plan">Fill here your info.</h2>
+        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 form-plan">
           {/* <div className="mb-4">
             <label className="block text-xl font-medium text-gray-600">Full Name:</label>
             <input
@@ -110,11 +110,12 @@ const navigate = useNavigate();
             <button type="submit" className="submit-button2">S U B M I T</button>
           </div>
         </form>
-      </div>
-      <div className="text-center text-5xl flex items-center justify-center gap-8">
+        <div className="text-center text-5xl flex items-center justify-center gap-8 flex4">
             <p className="" style={{ color: "black" }}> Get your </p>
             <p className="mt-36" style={{ color: "#5FD3AA" }}> ideal body </p>
           </div>
+      </div>
+      
     </div>
   );
 };

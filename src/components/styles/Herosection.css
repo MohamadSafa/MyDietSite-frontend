@@ -44,8 +44,10 @@
 }
 
 @media (max-width: 600px){
+
     .Learn-more {
-      top:50%;
-      font-size: medium;
+      top: 82%;
+      left: 20%;
+      font-size: small;
     }
 }

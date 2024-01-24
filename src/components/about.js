@@ -23,14 +23,14 @@ const AboutUs = () => {
 
         <div className='about-container'>
             <div className="flex justify-between mb-10">
-                <div className="flex center items-center text-4xl px-20">
+                <div className="flex2 center items-center text-4xl px-20">
                 The Website's brief
                 </div>
         </div>
         
         </div>
         <div className='about-container2'>
-        <div className="flex center items-center text-2xl px-20">
+        <div className="flex2 center items-center text-2xl px-20">
                 Here at My Diet Site, you get FREE access to our programs with the help of professional dietitian online and get your own meal plan. ​All you have to do is to login and press on the [Plans] button in the Navigation Bar above.
                 Plans are appointed each 10 Days for each interested visitor via email.
                 </div>

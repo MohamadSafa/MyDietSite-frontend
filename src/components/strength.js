@@ -8,7 +8,7 @@ import "./styles/nutrition.css"
 
 const Strength = () => {
     return (
-        <div>
+        <div className='strength-container'>
             <h2 className="bg-[#CEF3E7] text-center text-5xl pt-20 pb-20 relative" style={{ color: "black" }}>STRENGTH</h2>
 
             <div id="strength" className="flex pb-20 gap-8 m-10 justify-center">
@@ -31,7 +31,7 @@ const Strength = () => {
                     </p>
                 </div>
             </div>
-            <div className="text-center text-5xl flex items-center justify-center gap-8">
+            <div className="text-center text-5xl flex items-center justify-center gap-8 flex4">
                 <p className="" style={{ color: "black" }}> Get your </p>
                 <p className="mt-10" style={{ color: "#5FD3AA" }}> ideal body </p>
             </div>

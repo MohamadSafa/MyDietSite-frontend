@@ -52,7 +52,7 @@ const PlansTable = () => {
 
   const fetchPlans = () => {
     axios
-      .get("${process.env.REACT_APP_URL}/plans/getAll")
+      .get(`${process.env.REACT_APP_URL}/plans/getAll`)
       .then((response) => {
         console.log(response);
         setPlans(response.data.data);
@@ -193,7 +193,7 @@ const PlansTable = () => {
                 placeholder={plan.planName}
               />
             </div>
-            <div className="form-input">
+            <div className="form-input1">
               <input
                 type="text"
                 onChange={(e) => setPlanDescription(e.target.value)}
@@ -207,7 +207,7 @@ const PlansTable = () => {
                 placeholder={plan.meals[0].mealName}
               />
             </div>
-            <div className="form-input">
+            <div className="form-input1">
               <input
                 type="text"
                 onChange={(e) => setMealDescription1(e.target.value)}
@@ -221,7 +221,7 @@ const PlansTable = () => {
                 placeholder={plan.meals[1].mealName}
               />
             </div>
-            <div className="form-input">
+            <div className="form-input1">
               <input
                 type="text"
                 onChange={(e) => setMealDescription2(e.target.value)}
@@ -235,7 +235,7 @@ const PlansTable = () => {
                 placeholder={plan.meals[2].mealName}
               />
             </div>
-            <div className="form-input">
+            <div className="form-input1">
               <input
                 type="text"
                 onChange={(e) => setMealDescription3(e.target.value)}
@@ -249,7 +249,7 @@ const PlansTable = () => {
                 placeholder={plan.meals[3].mealName}
               />
             </div>
-            <div className="form-input">
+            <div className="form-input1">
               <input
                 type="text"
                 onChange={(e) => setMealDescription4(e.target.value)}
