@@ -112,18 +112,6 @@ const PlansTable = () => {
 
   const [sortRequests, setSortRequests] = useState(true); // true for ascending order , false for descending
   const toggleSort = (field) => {
-    // const newSortedPlans = [...plans].sort((a, b) => {
-    //   // if(a[field]< b[field]) return -1 aw 1 if i want sortOrder true aw false
-
-    //   if (a[field] < b[field]) return sortOrder ? -1 : 1;
-
-    //   if (a[field] > b[field]) return sortOrder ? 1 : -1;
-
-    //   return 0;
-    // });
-
-    // setPlans(newSortedPlans);
-    // setSortRequests(!sortRequests);
   };
 
   return (

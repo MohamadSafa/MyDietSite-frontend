@@ -11,12 +11,12 @@ const AboutUs = () => {
             {/* <h2 className="about-container" style={{ color: "black" }}> GET STARTED!</h2> */}
 
             <div className="flex justify-between mb-5 responsive-login">
-                <div className="flex center items-center mx-10 text-4xl px-10 " style={{ color: "black" }}>
+                <div className="flex6 center items-center mx-10 text-4xl px-10 " style={{ color: "black" }}>
                     GET STARTED !
                 </div>
                 <div className="flex center items-center text-4xl">
                 {!token?<Link to="/login">
-                    <button className="text-white text-xl mx-40 px-10 py-3 border-2 border-black hover:bg-[#5FD3AA] rounded-none" style={{ color: "black" }}>
+                    <button className="login-button2 text-white text-xl mx-40 px-10 py-3 border-2 border-black hover:bg-[#5FD3AA] rounded-none" style={{ color: "black" }}>
                         LOGIN
                     </button>
                     </Link>:<Link to="/login">

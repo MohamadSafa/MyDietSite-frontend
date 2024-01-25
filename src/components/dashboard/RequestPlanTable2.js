@@ -15,7 +15,6 @@ const RequestPlanTable2 = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/requests/getRequestByUserId/${userId}`)
       .then((response) => {
-        // console.log(response.data);
         setRequests(response.data.data);
       })
       .catch((error) => {

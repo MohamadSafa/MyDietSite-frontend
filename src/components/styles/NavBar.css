@@ -186,6 +186,20 @@
         gap: 5%;
     }
 
+    .Links5 ul {
+        display: flex;
+        font-size: medium;
+        justify-content: space-between;
+        color: black;
+        padding-right: 40%;
+        gap: 15%;
+    }
+
+    .nav-bar5 {
+        padding-top: 2%;
+        padding-right: 12%;
+    }
+
     .Logo4 {
         width: 35%;
         margin: 0px 0px;

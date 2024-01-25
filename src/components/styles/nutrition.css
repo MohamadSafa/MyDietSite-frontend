@@ -14,12 +14,13 @@
 @media (max-width: 600px) {
     #nutrition, #strength{
         flex-direction: column;
+        padding-bottom: 5%;
     }
 
     .flex4 {
         font-size: xx-large;
-        gap: 3%;
-        padding-bottom: 2%;
+        padding-bottom: 15%;
+        padding-top: 6%;
     }
 
 }
